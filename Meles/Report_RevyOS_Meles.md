@@ -13,8 +13,8 @@
 
 - Milk-V Meles 4GB/8GB/16GB
 	- 设备照片
-	- 设备型号截图![device-model](Meles/images/device-model.png)
-	- 系统信息截图![device-cpuinfo](Meles/images/device-cpuinfo.png)
+	- 设备型号截图![device-model](./images/device-model.png)
+	- 系统信息截图![device-cpuinfo](./images/device-cpuinfo.png)
 - eMMC 模组 > 16GB 如果使用 eMMC
 - SD 卡 如果使用 SD 卡
 - USB A to C 线缆一条
@@ -141,7 +141,7 @@ sudo fastboot flash root root-meles-20250728_180948.ext4
 #### 通过串口连接
 
 将开发板串口通过杜邦线与调试模块连接，连接方式为：开发板GND->调试器GND，开发板TX->调试器RX，开发板RX->调试器TX；如图所示，从右到左的三个插针分别为：GND-TX-RX
-![uart](Meles/images/uart.png)
+![uart](./images/uart.png)
 
 #### 打开终端，使用 minicom 或 tio 连接串口
 
@@ -153,7 +153,7 @@ minicom -b 115200 -D /dev/ttyUSB0
 默认用户名：`debian`
 默认密码：`debian`
 ```
-![startup](Meles/images/startup.png)
+![startup](./images/startup.png)
 重新给开发板上电，连接网口，等待开机
 
 ## 工具链测试
@@ -215,7 +215,7 @@ riscv64-plct-linux-gnu-gcc hello.c -o hello-gcc
 ./hello-gcc
 ```
 
-![gnu-hello](Meles/images/gnu-hello.png)
+![gnu-hello](./images/gnu-hello.png)
 编译并运行coremark（GCC）
 
 ```
@@ -227,7 +227,7 @@ make CC=riscv64-plct-linux-gnu-gcc XCFLAGS="-mcpu=xt-c910" compile
 
 ./coremark.exe
 ```
-![gnu-coremark](Meles/images/gnu-coremark.png)
+![gnu-coremark](./images/gnu-coremark.png)
 
 返回上级目录并退出ruyi GCC虚拟环境
 
@@ -255,7 +255,7 @@ clang -v
 clang hello.c -o hello-llvm; ./hello-llvm
 ```
 
-![llvm-hello](Meles/images/llvm-hello.png)
+![llvm-hello](./images/llvm-hello.png)
 编译并运行coremark（LLVM）
 
 ```
@@ -267,7 +267,7 @@ xtheadcondmov_xtheadfmemidx_xtheadmac_xtheadmemidx_xtheadmempair_xtheadsync" co
 
 ./coremark.exe
 ```
-![llvm-coremark](Meles/images/llvm-coremark.png)
+![llvm-coremark](./images/llvm-coremark.png)
 
 返回上级目录并退出ruyi GCC虚拟环境
 
