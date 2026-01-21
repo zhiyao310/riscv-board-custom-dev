@@ -1,74 +1,66 @@
-# RevyOS LPi4A 系统版本和工具链测试报告
+# RevyOS Duo 系统版本和工具链测试报告
 
 ## 测试环境
 
 ### 操作系统信息
 
-- 系统版本：RevyOS 20250729
-- 下载链接：[Nginx Directory](https://fast-mirror.isrc.ac.cn/revyos/extra/images/lpi4a/20250729/)
-- 参考安装文档：https://revyos.github.io/docs/
+- 系统版本：Duo Buildroot V2.0.1
+- 下载链接：<https://github.com/milkv-duo/duo-buildroot-sdk-v2/releases/download/v2.0.1/milkv-duo-musl-riscv64-sd_v2.0.1.img.zip>
+- 参考安装文档：<https://github.com/milkv-duo/duo-buildroot-sdk-v2>
 
 ### 硬件信息
 
-- Lichee Pi 4A (16G RAM + 128G eMMC)
+- Milk-V Duo 64M
 	- 设备照片
 	- 设备型号截图![device-model](./images/device-model.png)
 	- 系统信息截图![device-cpuinfo](./images/device-cpuinfo.png)
-- USB-C 电源适配器 / DC 电源一个
-- USB-UART 调试器一个
+- USB 转 UART 调试器
+- microSD 卡
 
 ## 操作系统安装与启动验证
 
 ### 下载并解压镜像
-
-下载镜像，使用 `zstd` 解压镜像：
-
+从[下载链接](https://github.com/milkv-duo/duo-buildroot-sdk-v2/releases/download/v2.0.1/milkv-duo-musl-riscv64-sd_v2.0.1.img.zip)下载你所需镜像。
+**解压相关文件**
 ```shell
-wget https://fast-mirror.isrc.ac.cn/revyos/extra/images/lpi4a/20250729/u-boot-with-spl-lpi4a-16g-main.bin
-wget https://fast-mirror.isrc.ac.cn/revyos/extra/images/lpi4a/20250729/boot-lpi4a-20250728_180938.ext4.zst
-wget https://fast-mirror.isrc.ac.cn/revyos/extra/images/lpi4a/20250729/root-lpi4a-20250728_180938.ext4.zst
-zstd -d boot-lpi4a-20250728_180938.ext4.zst
-zstd -d root-lpi4a-20250728_180938.ext4.zst
+unzip milkv-duo-musl-riscv64-sd_v2.0.1.img.zip
 ```
 
-### 通过 `fastboot` 刷写到板载 eMMC
-
-#### 使用 boot 按钮进入 fastboot 模式
-
-按住 **BOOT** 按钮，然后连接 USB-C 线（另一端连接 PC）进入 USB 烧录模式。
-
-使用以下命令刷写镜像。
-
+### 向 microSD 卡烧录系统镜像
+可使用 `dd` 命令
 ```shell
-sudo fastboot devices
-sudo fastboot flash ram u-boot-with-spl-lpi4a-16g-main.bin
-sudo fastboot reboot
-sudo fastboot flash uboot u-boot-with-spl-lpi4a-16g-main.bin
-sudo fastboot flash boot boot-lpi4a-20250728_180938.ext4
-sudo fastboot flash root root-lpi4a-20250728_180938.ext4
+sudo dd if=milkv-duo-musl-riscv64-sd_v2.0.1.img of=/dev/mmcblkX bs=1M
+```
+
+Log:
+```log
+输入了 896+1 块记录
+输出了 896+1 块记录
+939524608 字节 (940 MB, 896 MiB) 已复制，31.3784 s，29.9 MB/s
 ```
 
 ### 登录系统
-
 #### 通过串口连接
+将 microSD 卡插入 Milk-V Duo，重启。
 
-将开发板串口通过杜邦线与调试模块连接；红色圈内（从左往右第一排第二个）为GND，黄色圈内（第一排第五个）为TX，绿色圈内（第二排第五个）为RX。连接方式为：开发板GND->调试器GND，开发板TX->调试器RX，开发板RX->调试器TX
+开发板GND->调试器GND，开发板TX->调试器RX，开发板RX->调试器TX，如图所示（图中开发板一侧线序从左到右依次为TX、RX、GND）
 ![uart](./images/uart.png)
+```bash
+minicom -D /dev/ttyACM0 -c on
+```
 
 #### 打开终端，使用 minicom 或 tio 连接串口
 
 ```
-minicom -b 115200 -D /dev/ttyUSB0
+minicom -D /dev/ttyACM0 -c on
 
-# 或 tio /dev/ttyUSB0
-
-默认用户名：`debian`
-默认密码：`debian`
+默认用户名：`root`
+默认密码：`milkv`
 ```
-
 重新给开发板上电，连接网口，等待开机
 
 ![startup](./images/startup.png)
+
 
 ## 工具链测试
 
@@ -193,7 +185,7 @@ cd ..; ruyi-deactivate
 
 屏幕录制
 
-[![asciicast](https://asciinema.org/a/TAL2pRANQ6j16gvJ.svg)](https://asciinema.org/a/TAL2pRANQ6j16gvJ)
+[![asciicast](https://asciinema.org/a/HdOwhxjG1H1uQ3JR.svg)](https://asciinema.org/a/HdOwhxjG1H1uQ3JR)
 ## 预期结果
 
 在本次测试中，预期达到以下成果：

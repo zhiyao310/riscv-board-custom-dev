@@ -153,8 +153,11 @@ minicom -b 115200 -D /dev/ttyUSB0
 默认用户名：`debian`
 默认密码：`debian`
 ```
-![startup](./images/startup.png)
+
 重新给开发板上电，连接网口，等待开机
+
+![startup](./images/startup.png)
+
 
 ## 工具链测试
 

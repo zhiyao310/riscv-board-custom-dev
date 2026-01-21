@@ -1,6 +1,6 @@
 # LicheePi 4A x RuyiSDK 极速开发指南
 
-## 1. 认识 LicheePi 4A
+## 1.  LicheePi 4A概述
 
 - 概述
 - 硬件规格（处理器、内存、存储、接口、电源）

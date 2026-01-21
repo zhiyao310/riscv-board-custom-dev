@@ -181,5 +181,19 @@
     }
   },
   "active": "0ae51c385dd936c1",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Licheepi4A/boot_LPi4A.md",
+    "Duo/images/llvm-hello.png",
+    "Duo/images/uart.png",
+    "Duo/images/startup.png",
+    "Duo/images/marker.png",
+    "Duo/images/llvm-coremark.png",
+    "Duo/images/device-model.png",
+    "Duo/images/gnu-hello.png",
+    "Duo/images/gnu-coremark.png",
+    "Duo/images/device-cpuinfo.png",
+    "Duo/Report_RevyOS_Duo.md",
+    "Duo/images",
+    "Duo"
+  ]
 }
