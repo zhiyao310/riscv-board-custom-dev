@@ -33,6 +33,8 @@ EOF
 riscv64-plct-linux-gnu-gcc hello.c -o hello-gcc
 ./hello-gcc
 ```
+<img width="1377" height="980" alt="image" src="https://github.com/user-attachments/assets/5e593005-7b48-4253-80f5-99108e5d231b" />
+
 
 退出ruyi GCC虚拟环境
 
@@ -67,6 +69,7 @@ clang -v
 clang hello.c -o hello-llvm; ./hello-llvm
 ```
 
+<img width="1377" height="980" alt="image" src="https://github.com/user-attachments/assets/c75ae57e-6953-43fd-a3fc-94ce2a80a8a8" />
 
 
 退出ruyi GCC虚拟环境
@@ -74,4 +77,5 @@ clang hello.c -o hello-llvm; ./hello-llvm
 ```
 cd ..; ruyi-deactivate
 ```
+
 
