@@ -2,7 +2,8 @@
 
 ## 概述
 
-![Sipeed Lichee Pi 4A is a modular RISC-V mini PC with up to 16GB RAM ...](C:\Users\DELL\Desktop\P118实习\图片\OIP-C.YqxDPQXfYrK7AswJkR07cQHaEQ)
+<img width="474" height="272" alt="image" src="https://github.com/user-attachments/assets/fd740980-2851-412e-be16-1dfb7494b032" />
+
 
 LicheePi 4A 是由矽速科技（Sipeed）开发的基于 **XuanTie TH1520（曳影 1520）** 芯片的高性能 RISC-V 单板计算机（SBC），是首款性能可与主流 ARM 树莓派 4 相媲美的 RISC-V 开发板。它支持运行 **Android、Ubuntu、Debian** 等多种操作系统，为 RISC-V 开发者、嵌入式工程师、AIoT 研究者、开源爱好者和创作者提供强大、灵活、低成本的高性能计算平台，特别适合 RISC-V 生态开发、AI 加速应用、边缘计算和集群部署等场景。
 
@@ -31,3 +32,4 @@ LicheePi 4A 是由矽速科技（Sipeed）开发的基于 **XuanTie TH1520（曳
   - 音频：1x 3.5mm音频插孔（输入/输出）
 
 - 电源：USB Type-C 5V/2A、DC 12V/2A、POE 5V/2.4A（部分版本支持）
+
