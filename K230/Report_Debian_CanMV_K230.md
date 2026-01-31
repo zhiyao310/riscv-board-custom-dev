@@ -231,6 +231,11 @@ cd ..; ruyi-deactivate
 
 ![llvm-hello-run](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/K230/images/llvm-hello-run.png)
 
+## 完整测试过程
+
+屏幕录制
+
+[![asciicast](https://asciinema.org/a/777340.svg)](https://asciinema.org/a/777340)
 ## 预期结果
 
 在本次测试中，预期达到以下成果：
