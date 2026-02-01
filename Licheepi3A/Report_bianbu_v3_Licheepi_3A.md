@@ -18,11 +18,11 @@
 	
 	- 设备型号截图
 	
-	  
+	    ![device-model](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/device-model.png)
 	
 	- 系统信息截图
 	
-	  
+	  ![device-cpuinfo](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/device-cpuinfo.png)
 	
 - USB Type-C 数据线一条
 
@@ -113,6 +113,7 @@ riscv64-plct-linux-gnu-gcc hello.c -o hello-gcc
 ./hello-gcc
 ```
 
+![gnu-hello](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/gnu-hello.png)
 
 
 编译并运行coremark（GCC）
@@ -128,7 +129,7 @@ _zve64f_zve64x_zvfh_zvfhmin_zvkt_sscofpmf_sstc_svinval_svnapot_svpbmt" compile
 ./coremark.exe
 ```
 
-
+![gnu-coremark](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/gnu-coremark.png)
 
 返回上级目录并退出ruyi GCC虚拟环境
 
@@ -156,7 +157,7 @@ clang -v
 clang hello.c -o hello-llvm; ./hello-llvm
 ```
 
-
+![llvm-hello](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/llvm-hello.png)
 
 编译coremark（LLVM）
 
@@ -166,7 +167,7 @@ zvfhmin_zvkt_sscofpmf_sstc_svinval_svnapot_svpbmt" compile
 ./coremark.exe
 ```
 
-
+![llvm-coremark](https://github.com/zhiyao310/riscv-board-custom-dev/blob/main/Licheepi3A/images/llvm-coremark.png)
 
 返回上级目录并退出ruyi GCC虚拟环境
 
@@ -178,7 +179,7 @@ cd ..; ruyi-deactivate
 
 屏幕录制
 
-[![asciicast](https://asciinema.org/a/z8XWJGeUp7AiMb2N.svg)](https://asciinema.org/a/z8XWJGeUp7AiMb2N)
+[![asciicast](https://asciinema.org/a/777472.svg)](https://asciinema.org/a/777472)
 ## 预期结果
 
 在本次测试中，预期达到以下成果：
